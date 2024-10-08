@@ -1,7 +1,7 @@
 const authConfig = {
-	providers: [
+	providers: [ 
 		{
-			domain: "https://fond-sawfly-54.clerk.accounts.dev",
+			domain: process.env.CLERK_JWT_TEMPLATE_ISSUER_URL,
 			applicationID: "convex",
 		},
 	],
