@@ -2,13 +2,12 @@
 
 import { sidebarLinks } from "@/constants";
 import { cn } from "@/lib/utils";
+import { useAudio } from "@/providers/AudioProvider";
 import { SignedIn, SignedOut, useClerk } from "@clerk/nextjs";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import React from "react";
 import { Button } from "./ui/button";
-import { useAudio } from "@/providers/AudioProvider";
 
 const LeftSidebar = () => {
 	const pathname = usePathname();
@@ -28,7 +27,7 @@ const LeftSidebar = () => {
 					className="flex cursor-pointer items-center gap-1 pb-10 max-lg:justify-center"
 				>
 					<Image src="/icons/logo.svg" alt="logo" width={23} height={27} />
-					<h1 className="text-24 font-extrabold text-white max-lg:hidden">
+					<h1 className="font-extrabold text-24 text-white max-lg:hidden">
 						Multivo
 					</h1>
 				</Link>
@@ -42,9 +41,9 @@ const LeftSidebar = () => {
 							href={route}
 							key={label}
 							className={cn(
-								"flex gap-3 items-center py-4 max-lg:px-4 justify-center lg:justify-start",
+								"flex items-center justify-center gap-3 py-4 max-lg:px-4 lg:justify-start",
 								{
-									"bg-nav-focus border-r-4 border-orange-1": isActive,
+									"border-orange-1 border-r-4 bg-nav-focus": isActive,
 								},
 							)}
 						>
@@ -55,16 +54,16 @@ const LeftSidebar = () => {
 				})}
 			</nav>
 			<SignedOut>
-				<div className="flex-center w-full pb-14 max-lg:px-4 lg:pr-8">
-					<Button asChild className="text-16 w-full bg-orange-1 font-extrabold">
+				<div className="w-full flex-center pb-14 max-lg:px-4 lg:pr-8">
+					<Button asChild className="w-full bg-orange-1 font-extrabold text-16">
 						<Link href="/sign-in">Sign in</Link>
 					</Button>
 				</div>
 			</SignedOut>
 			<SignedIn>
-				<div className="flex-center w-full pb-14 max-lg:px-4 lg:pr-8">
+				<div className="w-full flex-center pb-14 max-lg:px-4 lg:pr-8">
 					<Button
-						className="text-16 w-full bg-orange-1 font-extrabold"
+						className="w-full bg-orange-1 font-extrabold text-16"
 						onClick={() => signOut(() => router.push("/"))}
 					>
 						Log Out

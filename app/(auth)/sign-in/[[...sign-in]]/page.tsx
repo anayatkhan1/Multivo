@@ -1,11 +1,11 @@
-import { SignIn } from '@clerk/nextjs'
+import { SignIn } from "@clerk/nextjs";
 
 const Page = () => {
-  return (
-    <div className="flex-center glassmorphism-auth h-screen w-full">
-      <SignIn />
-    </div>
-  )
-}
+	return (
+		<div className="glassmorphism-auth h-screen w-full flex-center">
+			<SignIn />
+		</div>
+	);
+};
 
-export default Page
+export default Page;

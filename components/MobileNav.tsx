@@ -33,7 +33,7 @@ const MobileNav = () => {
 						className="flex cursor-pointer items-center gap-1 pb-10 pl-4"
 					>
 						<Image src="/icons/logo.svg" alt="logo" width={23} height={27} />
-						<h1 className="text-24 font-extrabold  text-white-1 ml-2">
+						<h1 className="ml-2 font-extrabold text-24 text-white-1">
 							Multivo
 						</h1>
 					</Link>
@@ -49,9 +49,9 @@ const MobileNav = () => {
 											<Link
 												href={route}
 												className={cn(
-													"flex gap-3 items-center py-4 max-lg:px-4 justify-start",
+													"flex items-center justify-start gap-3 py-4 max-lg:px-4",
 													{
-														"bg-nav-focus border-r-4 border-orange-1": isActive,
+														"border-orange-1 border-r-4 bg-nav-focus": isActive,
 													},
 												)}
 											>
